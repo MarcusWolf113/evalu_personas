@@ -21,6 +21,9 @@
       <td>
         {{o.sex}}
       </td>
+      <td>
+        {{o.archivo}}
+      </td>
     </tr>
   </tbody>
 </table>
@@ -33,8 +36,13 @@
     <input type="text" name="nombre" id="nombre" class="col col-md-3" [(ngModel)]="nombre">
   </div>
   <br>
-  <div class="form-group col col-md-12">
-    <button type="button" class="btn btn-primary col col-md-2">Subir Documento</button>
+  <div class="form-group col col-md-3">
+    <div class="input-group mb-1">
+      <div class="custom-file form-group col col-md-12">
+        <input type="file" class="custom-file-input " id="archivo" name="archivo" [(ngModel)]="archivo" >
+        <label class="custom-file-label btn-primary" for="inputGroupFile01">Subir documento</label>
+      </div>
+    </div>
   </div>
   <br>
   <div class="form-group col col-md-12">

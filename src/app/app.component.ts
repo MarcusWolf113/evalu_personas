@@ -15,11 +15,13 @@ export class AppComponent {
   public listapersona: datos[] = [];
   public obj2 : any;
   public nombre: string;
+  public archivo: string;
   public jsonResul: datos [] = [];
   public person : datos[];
 
   constructor( private data: DataService){
-    this.nombre
+    this.nombre,
+    this.archivo
     
   }
 
@@ -30,7 +32,7 @@ export class AppComponent {
         this.person = result.results;
        
        let obj1 = result.results[0];
-       this.obj2 = {"nombre": this.nombre}
+       this.obj2 = {"nombre": this.nombre, "archivo": this.archivo}
        this.Listanombres = Object.assign(obj1, this.obj2);
        this.jsonResul.push(this.Listanombres);
         console.log(this.Listanombres);
@@ -38,8 +40,9 @@ export class AppComponent {
         console.log(this.jsonResul);
 
         localStorage.setItem("persona", JSON.stringify( this.jsonResul));
-        setTimeout(()=>{this.nombre = undefined}, 300);
+        setTimeout(()=>{this.nombre = undefined, this.archivo = undefined}, 300);
         this.obtener();
+        console.log(this.archivo);
    });
 
     
