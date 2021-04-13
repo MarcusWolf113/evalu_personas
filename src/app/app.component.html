@@ -1,0 +1,48 @@
+<br>
+<h4 class="text-center">Personas</h4>
+<br>
+<table class="table" *ngIf="listapersona.length>0">
+  <thead>
+    <tr>
+      <th scope="col">Nombre</th>
+      <th scope="col">Edad</th>
+      <th scope="col">Sexo</th>
+      <th scope="col">Documento</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let o of listapersona; let indice=index;">
+      <td>
+        {{o.nombre}}
+      </td>
+      <td>
+        {{o.age}}
+      </td>
+      <td>
+        {{o.sex}}
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<br>
+<form (submit)="guardar()">
+  <div class="form-group col col-md-12">
+    <label for=""><h6>Nombre:</h6></label>
+    <br>
+    <input type="text" name="nombre" id="nombre" class="col col-md-3" [(ngModel)]="nombre">
+  </div>
+  <br>
+  <div class="form-group col col-md-12">
+    <button type="button" class="btn btn-primary col col-md-2">Subir Documento</button>
+  </div>
+  <br>
+  <div class="form-group col col-md-12">
+    <button type="submit" class="btn btn-primary col col-md-2">Guardar</button>
+  </div>
+
+</form>
+<br>
+<div class="form-group col col-md-12">
+  <button type="button" class="btn btn-primary col col-md-2" (click)="borrar()">limpiar</button>
+</div>
